@@ -17,9 +17,37 @@
             border: none;
             display: block;
         }
+        #fallback {
+            display: none;
+            text-align: center;
+            padding: 50px;
+            font-family: Arial, sans-serif;
+        }
+        #fallback a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 18px;
+        }
     </style>
+    <script>
+        // Fallback redirect if iframe is blocked
+        setTimeout(function() {
+            var iframe = document.querySelector('iframe');
+            try {
+                // If iframe is blocked, redirect to the target
+                if (!iframe.contentWindow || !iframe.contentDocument) {
+                    window.location.replace('https://openvdb.github.io/fvdb.core');
+                }
+            } catch(e) {
+                // Cross-origin restrictions mean the iframe is likely working
+            }
+        }, 100);
+    </script>
 </head>
 <body>
     <iframe src="https://openvdb.github.io/fvdb.core" title="FVDB Documentation"></iframe>
+    <div id="fallback">
+        <p>Redirecting to <a href="https://openvdb.github.io/fvdb.core">FVDB Documentation</a>...</p>
+    </div>
 </body>
 </html>

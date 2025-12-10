@@ -3,51 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FVDB</title>
+    <meta http-equiv="refresh" content="0; url=https://openvdb.github.io/fvdb.core">
+    <title>FVDB - Redirecting...</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
-        #fallback {
-            display: none;
+        body {
+            font-family: Arial, sans-serif;
             text-align: center;
             padding: 50px;
-            font-family: Arial, sans-serif;
         }
-        #fallback a {
+        a {
             color: #0066cc;
             text-decoration: none;
-            font-size: 18px;
         }
     </style>
-    <script>
-        // Fallback redirect if iframe is blocked
-        setTimeout(function() {
-            var iframe = document.querySelector('iframe');
-            try {
-                // If iframe is blocked, redirect to the target
-                if (!iframe.contentWindow || !iframe.contentDocument) {
-                    window.location.replace('https://openvdb.github.io/fvdb.core');
-                }
-            } catch(e) {
-                // Cross-origin restrictions mean the iframe is likely working
-            }
-        }, 100);
-    </script>
 </head>
 <body>
-    <iframe src="https://openvdb.github.io/fvdb.core" title="FVDB Documentation"></iframe>
-    <div id="fallback">
-        <p>Redirecting to <a href="https://openvdb.github.io/fvdb.core">FVDB Documentation</a>...</p>
-    </div>
+    <p>Redirecting to <a href="https://openvdb.github.io/fvdb.core">FVDB Documentation</a>...</p>
+    <script>
+        window.location.replace('https://openvdb.github.io/fvdb.core');
+    </script>
 </body>
 </html>
